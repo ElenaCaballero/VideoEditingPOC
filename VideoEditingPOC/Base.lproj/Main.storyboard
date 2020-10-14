@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wU6-Tv-Seo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="VideoEditingPOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-cf-QfN">
+                                <rect key="frame" x="129" y="400" width="156" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4i-tn-Mmq">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
+                                        <state key="normal" title="Record a Video"/>
+                                        <connections>
+                                            <action selector="didSelectRecordVideoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vap-O8-fV3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzd-gc-l3n">
+                                        <rect key="frame" x="0.0" y="40" width="156" height="30"/>
+                                        <state key="normal" title="Select a Video"/>
+                                        <connections>
+                                            <action selector="didSelectSelectVideoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbm-dc-hyF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUM-WQ-iLx">
+                                        <rect key="frame" x="0.0" y="80" width="156" height="30"/>
+                                        <state key="normal" title="Watch a Video"/>
+                                        <connections>
+                                            <action selector="didSelectWatchVideoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LW5-fO-JGC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF2-cL-Nft">
+                                        <rect key="frame" x="0.0" y="120" width="156" height="30"/>
+                                        <state key="normal" title="Upload a Video to Mux"/>
+                                        <connections>
+                                            <action selector="didSelectUploadVideoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1IJ-xT-9A4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jGJ-ba-i0N">
+                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aXZ-cf-QfN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="75K-56-KXP"/>
+                            <constraint firstItem="aXZ-cf-QfN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SIO-nt-ccx"/>
+                            <constraint firstItem="jGJ-ba-i0N" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hks-ZY-Nmv"/>
+                            <constraint firstItem="jGJ-ba-i0N" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uml-Wm-m4t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q8r-cL-Hjp"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="jGJ-ba-i0N" id="aeY-ao-7d9"/>
+                        <outlet property="mainStackView" destination="aXZ-cf-QfN" id="LVd-Tn-RZP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CxG-PM-h25">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wU6-Tv-Seo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="df2-va-V0g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="93R-mE-4tC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5P-ox-cYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
